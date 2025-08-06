@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   botaoDois.addEventListener('click', function() {
-        window.location.href = '../paginaProduto/Produto.html';
+        window.location.href = './Produto.html';
 
     });
 
