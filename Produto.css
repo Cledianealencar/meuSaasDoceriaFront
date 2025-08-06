@@ -44,14 +44,10 @@ body {
   transition: color 0.3s;
 }
 
-.categoria:hover span,
-.categoria.ativo span {
+.categoria:hover span{
   color: #ea4698;
 }
 
-.categoria.ativo {
-  border-bottom-color: #ea4698;
-}
 
 .lista-produtos {
   display: grid;
@@ -151,7 +147,6 @@ body {
   font-weight: bold;
 }
 
-/* título */
 h2 {
   font-family: "Playwrite HU", cursive;
   font-weight: 400;
@@ -195,11 +190,10 @@ h2 {
   font-size: 18px;
 }
 
-/* carrinho */
 .cardCarrinho {
   position: fixed;
   top: 0;
-  right: -700px;
+  right: -1500px;
   width: 35vw;
   height: 100vh;
   background-color: #ffd2f8;
@@ -335,8 +329,8 @@ body.carrinho-aberto::before {
   .produto-item {
     flex-direction: row;
     align-items: center;
-    width: 90%;
-    max-width: 450px;
+    width: 98%;
+    max-width: 430px;
     padding: 25px;
     gap: 15px;
   }
@@ -405,7 +399,7 @@ body.carrinho-aberto::before {
     margin: auto;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 1050px) {
   .cardCarrinho {
     width: 80vw;
     right: -100vw;

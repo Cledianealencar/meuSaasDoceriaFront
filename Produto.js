@@ -163,8 +163,3 @@ botaoEnviarWhats.addEventListener('click', () => {
   const url = `https://wa.me/${numeroWhats}?text=${encodeURIComponent(mensagem)}`;
   window.open(url, '_blank');
 });
-
-
-
-
-
