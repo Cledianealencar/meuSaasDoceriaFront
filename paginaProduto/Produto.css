@@ -1,0 +1,444 @@
+body {
+  background-image: url(./img/fundoProduto.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.avatarERZA {
+  display: block;
+  margin: -60px auto 0 auto;
+  width: 500px;
+  height: 330px;
+  object-fit: cover;
+  object-position: top;
+  transform: translateX(-180px);
+}
+
+.categorias {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.categoria {
+  cursor: pointer;
+  font-weight: 700;
+  color: #3d2217;
+  font-size: 23px;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s, border-bottom-color 0.3s;
+}
+
+.categoria span {
+  display: inline-block;
+  font-family: "Playwrite HU", cursive;
+  font-weight: 400;
+  font-size: 28px;
+  transition: color 0.3s;
+}
+
+.categoria:hover span,
+.categoria.ativo span {
+  color: #ea4698;
+}
+
+.categoria.ativo {
+  border-bottom-color: #ea4698;
+}
+
+.lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 95%;
+  margin: auto;
+  padding: 30px 0;
+  list-style: none;
+}
+
+.produto-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f8baef;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  max-width: 100%;
+}
+
+.produto-item img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.descricao {
+  flex: 1;
+}
+
+.descricao h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #3d2217;
+}
+
+.descricao p {
+  margin: 5px 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.preco {
+  display: inline-block;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #3d2217;
+  font-size: 20px;
+}
+
+.controle-compra {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-adicionar {
+  font-size: 20px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background-color: #ea4698;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-adicionar:hover {
+  background-color: #c1387f;
+}
+
+.btn-maior,
+.btn-menor {
+  font-size: 22px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-maior:hover,
+.btn-menor:hover {
+  background-color: #f0f0f0;
+}
+
+.quantidade {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* título */
+h2 {
+  font-family: "Playwrite HU", cursive;
+  font-weight: 400;
+  font-size: 28px;
+  transition: color 0.3s;
+}
+
+.footer-carrinho {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.btn-carrinho {
+  background-color: #ff0783fa;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-carrinho:hover {
+  background-color: #c53b80;
+}
+
+.icone-carrinho {
+  font-size: 22px;
+}
+
+.total-carrinho-footer {
+  font-size: 18px;
+}
+
+/* carrinho */
+.cardCarrinho {
+  position: fixed;
+  top: 0;
+  right: -700px;
+  width: 35vw;
+  height: 100vh;
+  background-color: #ffd2f8;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  transition: right 0.3s ease;
+}
+
+.cardCarrinho.ativo {
+  right: 0;
+}
+
+.cabecalhoSacola {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.cabecalhoSacola h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+.fecharCarrinho {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #444;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.cardItens {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffe1f2;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.item-info {
+  flex: 1;
+  font-size: 16px;
+  color: #3d2217;
+}
+
+.item-controles {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-maior-carrinho,
+.btn-menor-carrinho,
+.btn-remover {
+  font-size: 18px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer !important;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: background-color 0.2s;
+}
+
+.btn-maior-carrinho:hover,
+.btn-menor-carrinho:hover {
+  background-color: #eee;
+}
+
+.btn-remover {
+  color: #d6002f;
+}
+
+.btn-remover:hover {
+  background-color: #fdd;
+}
+
+.cardTotal {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.cardBotao {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.cardBotao:hover {
+  background-color: #1ebe57;
+}
+
+body.carrinho-aberto::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+}
+
+@media (max-width: 1050px) {
+  .lista-produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-item {
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    gap: 15px;
+  }
+
+  .produto-item img {
+    width: 150px;
+    height: 150px;
+    margin-right: 5px;
+  }
+
+  .descricao h3 {
+    font-size: 22px;
+  }
+
+  .descricao p {
+    font-size: 18px;
+  }
+
+  .preco {
+    font-size: 20px;
+  }
+
+  .btn-adicionar {
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+
+  .btn-maior,
+  .btn-menor {
+    font-size: 22px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin: 0 5px;
+  }
+
+  .quantidade {
+    font-size: 20px;
+  }
+
+  .categoria {
+    font-size: 24px;
+    padding: 12px 24px;
+  }
+
+  .controle-compra {
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .avatarERZA {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    transform: none;
+    margin: 10px auto 0 auto;
+    text-align: center;
+  }
+
+  .avatarERZA img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+}
+@media (max-width: 600px) {
+  .cardCarrinho {
+    width: 80vw;
+    right: -100vw;
+  }
+
+  .cardCarrinho.ativo {
+    right: 0;
+  }
+
+  .cardItens p {
+    font-size: 0.9rem;
+  }
+
+  .cardBotao {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .cardTotal {
+    font-size: 1rem;
+  }
+
+  .cabecalhoSacola h3 {
+    font-size: 1.3rem;
+  }
+
+  .fecharCarrinho {
+    font-size: 1.3rem;
+  }
+
+  .btn-maior-carrinho,
+  .btn-menor-carrinho,
+  .btn-remover {
+    cursor: pointer !important;
+  }
+}
