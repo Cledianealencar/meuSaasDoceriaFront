@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   botaoDois.addEventListener('click', function() {
-        window.location.href = './Produto.html';
-
+window.location.href = 'https://cledianealencar.github.io/meuSaasDoceriaFront/Produto.html';
     });
 
 });
