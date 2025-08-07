@@ -1,9 +1,9 @@
-body{
-    background-image: url(./img/fundoMarmore.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+body {
+  background-image: url(./img/fundoMarmore.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .avatarERZA {
@@ -12,15 +12,14 @@ body{
   object-fit: cover;
   width: 400px;
   height: 250px;
-  object-fit: cover;
   object-position: top;
 }
 
-.tituloUm{
-   font-size: 30px; 
-   color: #3d2217; 
-   margin: 50px;
-   text-align: center;
+.tituloUm {
+  font-size: 35px;
+  color: #3d2217;
+  margin: 30px;
+  text-align: center;
 }
 
 @keyframes pulsar {
@@ -29,31 +28,67 @@ body{
   100% { transform: scale(1); }
 }
 
-.botao{
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 20vh;
-    gap: 30px;
+.botao {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px; 
 }
 
 button {
-    width: 400px;
-    color: #3d2217;
-    padding: 8px 5px;
-    font-size: 19px;
-    border-radius: 45px;
-    border: none;
-    background-color: #ff99ff;
-    cursor: pointer;
-    transition-duration: 0.3s;
-    animation: pulsar 2.5s infinite;
+  flex: 1 1 40%;       
+  max-width: 500px;    
+  min-width: 800px;    
+  padding: 12px 24px;
+  font-size: 17px;
+  border-radius: 45px;
+  border: none;
+  color: #3d2217;
+  background-color: #ffc0ed;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  animation: pulsar 2.5s infinite;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 button:hover {
-  background-color: #ea4698; 
+background-color: #e2b0a4;
+box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
+/* Responsivo para telas até 1050px */
+@media (max-width: 1050px) {
+  .botao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
 
+  .botao button {
+    flex: 1 1 45%;      
+    max-width: 300px;  
+    min-width: 140px;  
+    height: 52px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    background-color: #f0c3b8;
+    color: #3d2217;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .botao button:hover,
+  .botao button:focus {
+    background-color: #e2b0a4;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    outline: none;
+  }
+}
